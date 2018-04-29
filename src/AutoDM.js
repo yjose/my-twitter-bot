@@ -9,7 +9,6 @@ const AutoDM = () => {
 };
 
 const SendMessage = user => {
-  console.log(" 🎉🎉🎉🎉 New Follower  🎉🎉🎉🎉🎉 ");
   const { screen_name, name } = user.source;
 
   const obj = {
@@ -18,6 +17,7 @@ const SendMessage = user => {
   };
   // the follow stream track if I follow author person too.
   if (screen_name != my_user_name) {
+    console.log(" 🎉🎉🎉🎉 New Follower  🎉🎉🎉🎉🎉 ");
     setTimeout(() => {
       T.post("direct_messages/new", obj)
         .catch(err => {
@@ -41,7 +41,7 @@ const GenerateMessage = name => {
   ];
   const d = new Date();
   const dayName = days[d.getDay()];
-   return `Hi ${name} Thanks for being a part of my social media network. I'am the @PicsrushE founder,A new Online Image Editor completely with web technologies,I'm also a reactjs developer and medium blogger.\n Happy to discuss anytime 😊  \n Happy ${dayName} 😊😊 `;
+  return `Hi ${name} Thanks for being a part of my social media network. I'am the @PicsrushE founder,A new Online Image Editor completely with web technologies,I'm also a reactjs developer and medium blogger.\n Happy to discuss anytime 😊  \n Happy ${dayName} 😊😊 `;
 };
 
 module.exports = AutoDM;
